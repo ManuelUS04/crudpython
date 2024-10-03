@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Detalles del Producto</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Nombre: {{ product.name }}</label>
+            </div>
+            <div class="form-group">
+                <label for="description">Descripción: {{ product.description }}</label>
+            </div>
+            <div class="form-group">
+                <label for="price">Precio: {{ product.price }}</label>
+            </div>
+            <div class="form-group">
+                <label for="stock">Stock: {{ product.stock }}</label>
+            </div>
+            <a href="{% url 'product_index' %}" class="btn btn-secondary">Volver</a>
+        </form>
+    </div>
+</body>
+</html>
